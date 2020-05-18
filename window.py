@@ -2,6 +2,10 @@ import numpy as np
 import tkinter as tk
 from Map import *
 
+# what I want to add after this:
+# resizing canvas, drawing pictures inside canvas
+# click and drag moving
+# mousewheel resize
 
 class drawCell(tk.Canvas):
     width = 0

@@ -1,5 +1,10 @@
 import numpy as np
 
+# new stuff:
+# add definition for wall, air, door, trap
+# add definition for player, monster
+# add definition for effect
+
 class Locn:
     row = 0
     col = 0
