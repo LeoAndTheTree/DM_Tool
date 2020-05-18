@@ -1,4 +1,5 @@
 import numpy as np
+from PIL import Image as im
 
 # new stuff:
 # add definition for wall, air, door, trap
@@ -25,11 +26,13 @@ class Cell:
     _locn = None
     _tangible = None
     _visible = None
+    _image = None
 
-    def __init__(self, row, col):
+    def __init__(self, row, col, imageDir):
         self._locn = Locn(row, col)
+        self._image = im.open(imageDir)
 
-    def __hash__(self): return 13 * hash(_type) + hash(_locn)
+    def __hash__(self): return 13 * hash(_tangible) + 97 * hash(_visible) + hash(_locn)
 
     def __eq__(self, other):
         return (other != None and

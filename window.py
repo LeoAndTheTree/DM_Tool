@@ -68,12 +68,13 @@ class Application(tk.Frame):
         for i in range(row):
             for j in range(col):
                 self._canvas.create_line(i*100, j*100, i*100+100, j*100, i*100+100, j*100+100, i*100, j*100+100, i*100, j*100)
+                self._canvas.create_image(self._map._grid[i][j]._image)
         self._canvas.configure(scrollregion=self._canvas.bbox('all'))
 
 cells = []
 for i in range(3):
     for j in range(3):
-        cells.append(Cell(i, j))
+        cells.append(Cell(i, j), "Assets/stone2.jpg")
 
 app = Application(cells=cells)
 app.master.title("test")
